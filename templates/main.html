@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <title>Crop Recommendation Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+</head>
+
+<div class="about"; style="width: 100%;" align="center">
+  Hello, There! Welcome to Agribot!
+  <br>Our Machine Learning gives you the most accurate reccomendations.
+  <br>Find out which crop will give you the best yield!
+</div>
+
+<div class="row">
+
+  <div class="column">
+    <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>To get your reccomendation, give us the following details:</legend>
+            Ratio of Nitrogen content in soil:
+            <input name="N" type="number" required>
+            <br>
+            <br> Ratio of Phosphorus content in soil:
+            <input name="P" type="number" required>
+            <br>
+            <br> Ratio of Pottasium content in soil:
+            <input name="K" type="number" required>
+            <br>
+            <br> Temperature in degree celcius:
+            <input name="temperature" type="number" required>
+            <br>
+            <br> Relative Humidity in %:
+            <input name="humidity" type="number" required>
+            <br>
+            <br> pH:
+            <input name="ph" type="number" required>
+            <br>
+            <br> Monthly rainfall in mm:
+            <input name="rainfall" type="number" required>
+            <br>
+            <br>
+            <input type="submit">
+        </fieldset>
+    </form>
+  </div>
+
+  <div class="column">
+    <div class="result" align="center">
+        <p>Waiting for your input ....</p>
+        {% if result %}
+        <p> Aha, Got your input!</p>
+        	{% for variable, value in original_input.items() %}
+        		<b>{{ variable }}</b> : {{ value }}
+        	{% endfor %}
+    		<br>
+        	<br> Predicted crop to plant:
+       		<p style="font-size:50px ;color:darkblue">{{ result }}</p>
+
+          <p>Thank you for using our service!</p>
+        {% endif %}
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Created with <span>&#10084;</span> by Prudence Majoni<br>
+  <a href="mailto:agribot@gmail.com">agribot@gmail.com</a> <br>&#xA9; 2022</p>
+</footer>
+</html>
