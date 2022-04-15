@@ -8,3 +8,6 @@ Being one of the poorest nations in the world, climate change has caught Zimbabw
 A Machine Learning system that tells farmers what to plant.
 
 We created a Web Application to let the farmer enter details on their soil and weather. Our app gives the farmer a reccomendation based on their input.
+
+
+Link to web application: [https://crop-reccomendation-model.herokuapp.com/](url)
