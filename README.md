@@ -6,5 +6,3 @@ Being one of the poorest nations in the world, climate change has caught Zimbabw
 
 #Our Solution 
 A Machine Learning system that tells farmers what to plant.
-
-![Imaage](http://url/to/img.png)
